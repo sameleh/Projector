@@ -6,7 +6,7 @@ const userNames = ["Петрик Ольга Іванівна", "Гнатюк П�
 let initials;
 
 initials = userNames.map((item) => {
-    const splitUserNames = item.split(' ');
+    const splitUserNames = item.split(" ");
 
     // За допомогою методів map і split створимо масиви, в яких ПІБ будуть вказані окремо.
 
@@ -27,7 +27,7 @@ initials = userNames.map((item) => {
     */
 });
 
-console.log(`Initials: ${initials} (${Array.isArray(initials) && 'array' || typeof(initials)})`);
+console.log(`Initials: ${initials} (${Array.isArray(initials) && "array" || typeof(initials)})`);
 
 document.querySelector(".result1").innerText = `${initials} (${Array.isArray(initials) && 'array' || typeof(initials)})`;
 
