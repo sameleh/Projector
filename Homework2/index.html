@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <script async type="text/javascript" src="general.js"></script>
+    <title>Homework 2</title>
+</head>
+<body>
+    <div class="card">
+        <h2># 1</h2>
+        <pre>
+            let randomString = ""; 
+            let finalResult;
+            
+            while (randomString.length < 6) { 
+                randomString += Math.floor(Math.random() * 10) + 1;
+                finalResult = randomString.slice(0, 6);
+            }
+            
+            console.log(`Final result: ${finalResult} (${typeof(finalResult)})`);
+        </pre>
+        <h4>Result:</h4>
+        <div class="result result1"></div>
+    </div>
+</body>
+</html>
