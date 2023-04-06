@@ -3,9 +3,10 @@
 //Task 1
 
 let randomString = ""; // Призначаємо строкову змінну з порожнім рядком.
-let finalResult; //У цю змінну передамо фінальний результат.
+let finalResult; // У цю змінну передамо фінальний результат.
+const maxValue = 6; // Максимальне значення символів.
 
-while (randomString.length < 6) { 
+while (randomString.length < maxValue) { 
     
     // Запускаємо цикл, який відбуватиметься доти, доки довжина рядка не становитиме 6.
     
@@ -19,14 +20,18 @@ while (randomString.length < 6) {
         Отримане значення об'єднуємо з початковим значенням (порожнім рядком), у результаті отримаємо 
         нове значення рядка. Дія відбувається доти, доки довжина рядка не стане рівною 6 символам.
     */
-    
-    finalResult = randomString.slice(0, 6);
-    
-    /*
-        Іноді останнє додане значення може бути двозначним (10), для таких випадків ми обрізаємо 
-        рядок і відразу перезаписуємо попередній.
-    */
 }
+
+if (randomString.length > maxValue) {
+    finalResult = randomString.slice(0, 6);
+} else {
+    finalResult = randomString;
+}
+
+/*
+    Іноді останнє додане значення може бути двозначним (10), для таких випадків ми обрізаємо 
+    рядок і відразу перезаписуємо попередній.
+*/
 
 console.log(`Final result: ${finalResult} (${typeof(finalResult)})`);
 document.querySelector(".result1").innerText = `${finalResult} (${typeof(finalResult)})`;
