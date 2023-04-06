@@ -65,21 +65,28 @@
     <div class="card">
         <h2># 4</h2>
         <pre>
-            let studentNumber = 100;
-            let teacherNumber = 100;
+            const greeting = "I'm doing homework!";
+            const studentName = '' //put your name here.
             
-            let newStudentResult = ++studentNumber;
+            console.log(`${studentName}: ${greeting}`);
             
             /*
-                Префіксна форма ++studentNumber збільшує studentNumber
-                та повертає нове значення 101.
+                У разі використання зворотних лапок у рядку буде обчислено 
+                вказаний вираз: (: I'm doing homework!).
             */
             
-            let newTeacherResult = teacherNumber++;
+            console.log('${studentName}: greeting');
             
             /*
-                Постфіксна форма teacherNumber++ також збільшує teacherNumber,
-                але повертає попереднє значення 100.
+                При використанні одинарних лапок результатом буде 
+                рядок: (${studentName}: greeting).
+            */
+            
+            console.log("${studentName}: ${greeting}");
+            
+            /*
+                При використанні подвійних лапок результатом буде 
+                рядок: (${studentName}: ${greeting}).
             */
         </pre>
         <h4>Result:</h4>
