@@ -34,4 +34,5 @@ if (randomString.length > maxValue) {
 */
 
 console.log(`Final result: ${finalResult} (${typeof(finalResult)})`);
+
 document.querySelector(".result1").innerText = `${finalResult} (${typeof(finalResult)})`;
