@@ -10,22 +10,19 @@ initials = userNames.map((item) => {
 
     // За допомогою методів map і split створимо масиви, в яких ПІБ будуть вказані окремо.
 
-    splitUserNames.forEach((item, index, array) => {
-        array.fill(item[0], index, (index + 1));
-    });
+    const preInitials = splitUserNames.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue[0] + "." ;
+    }, '');
 
     /*
-        За допомогою методу forEach і fill опрацюємо кожен перший символ і перепишемо
-        їм наступне значення в масиві.
+        За допомогою reduce перебираємо значення і виводимо тільки перший символ 
+        значення і складаємо в один масив.
     */
-   
-    return splitUserNames.join(".");
 
-    /*
-        Об'єднаємо дані в один масив із роздільником і повернемо його як значення
-        для змінної initials.
-    */
+    return preInitials;
 });
+
+initials.sort(); // Сортуємо масив за алфавітом.
 
 console.log(`Initials: ${initials} (${Array.isArray(initials) && "array" || typeof(initials)})`);
 
@@ -36,12 +33,14 @@ document.querySelector(".result1").innerText = `${initials} (${Array.isArray(ini
 
 //Task 2
 
-const currentMaxValue = 4589;
-let reverseMaxValue = parseFloat(currentMaxValue.toString().split("").reverse().join(""));
+const currentMaxValue = -4589;
+let reverseMaxValue = Math.sign(currentMaxValue) * parseFloat(currentMaxValue.toString().split("").reverse().join(""));
 
 /* 
-    Число > Рядок > Розбиття кожного символу на окремий елемент масиву > 
-    > Перевертаємо масив > Склеюємо > Переводимо знову в число 
+    Число > Рядок > Розбиття кожного символу на окремий елемент масиву 
+    > Перевертаємо масив > Склеюємо > Переводимо знову в число
+    Перевіряємо за допомогою Math.sign() чи є початкове число від'ємним (-1)
+    або позитивним (1) і множимо на перевернутий варіант числа.
 */
 
 console.log(`Reverse max value: ${reverseMaxValue} (${typeof(reverseMaxValue)})`);
@@ -59,7 +58,7 @@ let productOfArray;
 const flatResultsArray = resultsArray.flat(Infinity); // Перетворюємо багаторівневий масив у плоский.
 productOfArray = flatResultsArray.reduce((accumulator, currentValue) => {
     return accumulator * currentValue;
-});
+}, 1);
 
 /*
     Використовуємо метод reduce для отримання потрібного результату. Множимо перший елемент 
