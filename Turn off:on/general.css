@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0);
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+    transition: all 240ms ease-in;
+}
+
+body,
+body.on {
+    background: rgb(255 255 255);
+}
+
+body.off {
+    background: rgb(0 0 0);
+}
+
+
+
+
+main {
+    max-width: min-content;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1.5rem;
+    user-select: none;
+    mix-blend-mode: difference;
+}
+
+
+
+
+button {
+    all: unset;
+    display: flex;
+    place-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.75rem 1rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    border-radius: 2rem;
+    background: rgb(255 255 255);
+    overflow: overlay;
+    cursor: pointer;
+    transition: transform 240ms cubic-bezier(.47,1.64,.41,.8);
+}
+
+button:hover,
+button:focus-visible {
+    transform: scale(1.04);
+}
+
+button:focus-visible {
+    box-shadow: 0 0 0 0.125rem rgb(0 0 0), 0 0 0 0.25rem rgb(255 255 255);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+button::before {
+    font-family: "Font Awesome 6 Pro";
+}
+
+button::before,
+.on button::before {
+    content: "\f0eb";
+    font-weight: 400;
+}
+
+.off button::before {
+    content: "\f672";
+    font-weight: 900;
+}
+
+
+
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: white;
+    cursor: default;
+}
+
+.statistics * {
+    font-weight: 900;
+}
